@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: spectrolite-auth
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: ADMIN_TOKEN
+        generateValue: true
+      - key: SESSION_DAYS
+        value: "7"
